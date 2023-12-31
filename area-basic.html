@@ -1,0 +1,72 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=area-basic&code=PYBwLglsB2AEC8sDeAoWtJgDYFMBcya6GOAHmAQOSAsNoNxeg-K6DlcoPOJlRAvgDRGkCCpEAM4FUxDAE8Q-WJQDGAQzA4A5sABO4ytzEAjYAFdoAE3kaA4vJAEAZvKyCc24ibDyCAbQBMABm8BmTlgfbwAWQOCAVnDfADZo7wB2eIAOeIBOaIBGbyzMrM8sgKDvTLDizKjyuPKk8tTyjOKfaM88ps8AXQ4ncX4hESJ0MElpSgA3O30cNnQuIgc1CBxhWHdBwjF0aHkAW1G6JlYnMRc3VcyYzz9_ZOSc2Ey7iNbWtsefCM-_ese_TwSYiEQj9kgkEkCQjF7pk0iFvDE0n4EpUYWDwckEQA6N5pDEAhKZTLY6IhCLAsF-YnFZJXTzPNJUnwJUERbIhRmEvwhTJ-bIcpFXBJ_DmeGLJTJgmIcoGeNKwhltVpw5kJNJSxWEuHPQn8mLZBKy6Vw74Jbwc3ymu5mzIdY7EYZSKhYCDQaZ29CmHDyADKw1wInY60D6C67AA3EA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.4.3/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: '水稻生产量'
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: [2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      name: '水稻生产量',
+      data: [162303880, 180521211, 182055538, 183276448, 187744460, 194069375, 197774869.1, 198676711.1, 204548773.1, 208232529.1, 207875104.1, 211341310.1, 213723732.1, 212681776.1, 214429949.1, 214078796.1, 211405211.1, 213610729.1, 214403870.1, 210070800.1],
+      type: 'line',
+      areaStyle: {}
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
